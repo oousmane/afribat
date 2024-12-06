@@ -1,13 +1,20 @@
 Package: afribat
 Type: Package
-Title: What the Package Does (Title Case)
+Title: African bat database in R
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: 
+    person("Ousmane", "Ouedraogo", , "oousmane@proton.me", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-6349-4146"))
+Maintainer: The package maintainer <oousmane@proton.me>
+Description: A curated data of occurrences, distributions and conservation metrics for sub-Saharan bats
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/oousmane/afribat
 BugReports: https://github.com/oousmane/afribat/issues
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 2.10)
+Imports: 
+    readr,
+    sf
