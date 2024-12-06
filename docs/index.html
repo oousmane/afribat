@@ -115,14 +115,11 @@
 <p>The example below demonstrates how to load the spatial version of the database and extract information for a specific administrative level—such as <code>admin1</code> ie ‘Burkina Faso’, highlighting the package’s flexibility and ease of use. This is for learning purpose. Some considerations are neglicted.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/oousmane/afribat" class="external-link">afribat</a></span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span><span class="co"># Load data</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"afribats_sf"</span>, package <span class="op">=</span> <span class="st">"afribat"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning in data("afribats_sf", package = "afribat"): data set 'afribats_sf' not</span></span>
-<span><span class="co">#&gt; found</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"afribats_sf"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load Burkina Faso boundary</span></span>
 <span><span class="va">bf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html" class="external-link">read_sf</a></span><span class="op">(</span><span class="st">"https://github.com/oousmane/hexburdb/raw/main/map/admin0.gpkg"</span><span class="op">)</span></span>
@@ -131,10 +128,6 @@
 <span><span class="va">bats80</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_join.html" class="external-link">st_filter</a></span><span class="op">(</span><span class="va">afribats_sf</span>, <span class="va">bf</span>, .predicate <span class="op">=</span> <span class="va">st_within</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1980</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Check if results are empty</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">bats80</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw"><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop</a></span><span class="op">(</span><span class="st">"No data found for the specified criteria (year 1980)"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
 <span></span>
 <span><span class="co"># Extract species names</span></span>
 <span><span class="va">species</span> <span class="op">&lt;-</span> <span class="va">bats80</span> <span class="op">|&gt;</span> </span>
@@ -292,7 +285,10 @@ D = \frac{1}{\sum_{i=1}^{S} p_i^2}
 \text{Inverse Simpson's Index} = \frac{1}{0.389} \approx 2.57
 </annotation></semantics></math></p>
 <p>This suggests that the community diversity is roughly equivalent to having 2.57 equally abundant species.</p>
-<p><strong>References</strong> Simpson, E. H. (1949). Measurement of diversity. Nature, 163(4148), 688.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/simpson.html">simpson</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 13.33846</span></span></code></pre></div>
+<p>For further reading, see : Simpson, E. H. (1949). Measurement of diversity. Nature, 163(4148), 688.</p>
 </div>
 </div>
 </div>

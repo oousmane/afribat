@@ -1,4 +1,6 @@
 #'  Bat records as simple features.
+#'
+#'
 #'  Occurrence records of 266 bat species from 53 genera and 12 families
 #'  (order Chiroptera, class Mammalia) from sub-Saharan Africa.
 #'

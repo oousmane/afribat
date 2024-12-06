@@ -3,9 +3,7 @@
 \docType{data}
 \name{afribats_sf}
 \alias{afribats_sf}
-\title{Bat records as simple features.
- Occurrence records of 266 bat species from 53 genera and 12 families
- (order Chiroptera, class Mammalia) from sub-Saharan Africa.}
+\title{Bat records as simple features.}
 \format{
 A tibble with 17255 rows and 12 variables:
 \describe{
@@ -30,8 +28,7 @@ A tibble with 17255 rows and 12 variables:
 afribats_sf
 }
 \description{
-Bat records as simple features.
- Occurrence records of 266 bat species from 53 genera and 12 families
+Occurrence records of 266 bat species from 53 genera and 12 families
  (order Chiroptera, class Mammalia) from sub-Saharan Africa.
 }
 \keyword{datasets}

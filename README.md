@@ -92,14 +92,11 @@ considerations are neglicted.
 
 ``` r
 library(sf)
-#> Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
 library(afribat)
 
 
 # Load data
-data("afribats_sf", package = "afribat")
-#> Warning in data("afribats_sf", package = "afribat"): data set 'afribats_sf' not
-#> found
+data("afribats_sf")
 
 # Load Burkina Faso boundary
 bf <- read_sf("https://github.com/oousmane/hexburdb/raw/main/map/admin0.gpkg")
@@ -108,10 +105,6 @@ bf <- read_sf("https://github.com/oousmane/hexburdb/raw/main/map/admin0.gpkg")
 bats80 <- st_filter(afribats_sf, bf, .predicate = st_within) |> 
   dplyr::filter(year == 1980)
 
-# Check if results are empty
-if (nrow(bats80) == 0) {
-  stop("No data found for the specified criteria (year 1980)")
-}
 
 # Extract species names
 species <- bats80 |> 
@@ -280,5 +273,10 @@ $$
 This suggests that the community diversity is roughly equivalent to
 having 2.57 equally abundant species.
 
-**References** Simpson, E. H. (1949). Measurement of diversity. Nature,
-163(4148), 688.
+``` r
+simpson(species)
+#> [1] 13.33846
+```
+
+For further reading, see : Simpson, E. H. (1949). Measurement of
+diversity. Nature, 163(4148), 688.

@@ -1,4 +1,6 @@
 #'  Bat records as tibble.
+#'
+#'
 #'  Occurrence records of 266 bat species from 53 genera and 12 families
 #'  (order Chiroptera, class Mammalia) from sub-Saharan Africa.
 #'
@@ -19,6 +21,6 @@
 #'   \item{checked}{a character denoting whether the bat specimen was examined by the authors}
 #' }
 #' @source {Originally published in: Monadjem, A., Montauban, C., Webala, P.W. et al. African bat database: curated data of occurrences, distributions and conservation metrics for sub-Saharan bats. Sci Data 11, 1309 (2024). https://doi.org/10.1038/s41597-024-04170-71}
-"afribats"
+"afribats_df"
 
 
