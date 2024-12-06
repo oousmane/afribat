@@ -96,7 +96,7 @@ library(afribat)
 
 
 # Load data
-data("afribats_sf")
+afribats_sf <- afribat::afribats_sf
 
 # Load Burkina Faso boundary
 bf <- read_sf("https://github.com/oousmane/hexburdb/raw/main/map/admin0.gpkg")
