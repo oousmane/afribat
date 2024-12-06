@@ -19,9 +19,13 @@ afribats_sf <- afribats_df |>
   dplyr::filter(!(is.na(longitude) & is.na(latitude))) |>
   sf::st_as_sf(coords = c("longitude", "latitude"),crs = 4326)
 
+<<<<<<< HEAD
 usethis::use_data(afribats_df, overwrite = TRUE)
 usethis::use_data(afribats_sf, overwrite = TRUE)
 
+=======
+usethis::use_data(afribats_df, afribats_sf, overwrite = TRUE)
+>>>>>>> 9cbb00b28be2aaeb16eb622d0b3c405ac022efec
 
 
 
