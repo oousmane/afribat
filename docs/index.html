@@ -135,14 +135,18 @@
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html" class="external-link">pull</a></span><span class="op">(</span><span class="st">"species"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Check species</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw"><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop</a></span><span class="op">(</span><span class="st">"No species data found for the filtered dataset"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># Example usage of margalef index</span></span>
-<span><span class="fu"><a href="reference/margalef.html">margalef</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 5.595365</span></span></code></pre></div>
+<span><span class="va">species</span></span>
+<span><span class="co">#&gt;  [1] "nudiventris"  "nudiventris"  "nudiventris"  "nudiventris"  "perforatus"  </span></span>
+<span><span class="co">#&gt;  [6] "perforatus"   "tridens"      "tridens"      "abae"         "cf. ruber"   </span></span>
+<span><span class="co">#&gt; [11] "cf. ruber"    "cf. ruber"    "jonesi"       "major"        "major"       </span></span>
+<span><span class="co">#&gt; [16] "major"        "major"        "major"        "pumilus"      "pumilus"     </span></span>
+<span><span class="co">#&gt; [21] "gambiensis"   "gambiensis"   "hispida"      "macrotis"     "thebaica"    </span></span>
+<span><span class="co">#&gt; [26] "helvum"       "helvum"       "gambianus"    "gambianus"    "angolensis"  </span></span>
+<span><span class="co">#&gt; [31] "fumigatus"    "landeri"      "cystops"      "microphyllum" "microphyllum"</span></span>
+<span><span class="co">#&gt; [36] "guineensis"   "schlieffeni"  "schlieffeni"  "schlieffeni"  "schlieffeni" </span></span>
+<span><span class="co">#&gt; [41] "schlieffeni"  "rusticus"     "leucogaster"  "leucogaster"  "leucogaster" </span></span>
+<span><span class="co">#&gt; [46] "leucogaster"  "leucogaster"  "leucogaster"  "leucogaster"  "leucogaster" </span></span>
+<span><span class="co">#&gt; [51] "leucogaster"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="biodiversity-indices">Biodiversity indices<a class="anchor" aria-label="anchor" href="#biodiversity-indices"></a>
@@ -154,7 +158,8 @@
 <p>The Margalef index measures species richness adjusted for sample size. It emphasizes the number of species (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>) relative to the total number of individuals (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>). The formula is given by :</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>M</mi></msub><mo>=</mo><mfrac><mrow><mi>S</mi><mo>−</mo><mn>1</mn></mrow><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 D_M = \frac{S - 1}{\log(N)}
-</annotation></semantics></math> where :</p>
+</annotation></semantics></math></p>
+<p>where :</p>
 <ul>
 <li>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>: Number of unique species<br>
@@ -165,8 +170,7 @@ D_M = \frac{S - 1}{\log(N)}
 <p>The Margalef index provides a measure of species richness while accounting for the size of the sample. Larger samples are expected to have more species.</p>
 <p>For further reading see : Margalef, R. (1958). Information theory in ecology. General Systems, 3, 36–71.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/oousmane/afribat" class="external-link">afribat</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/margalef.html">margalef</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/margalef.html">margalef</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 5.595365</span></span></code></pre></div>
 </div>
 <div class="section level3">

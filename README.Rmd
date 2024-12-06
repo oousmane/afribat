@@ -105,13 +105,7 @@ species <- bats80 |>
   dplyr::pull("species") |> 
   as.character()
 
-# Check species
-if (length(species) == 0) {
-  stop("No species data found for the filtered dataset")
-}
-
-# Example usage of margalef index
-margalef(species)
+species
 
 ```
 
@@ -129,7 +123,9 @@ The formula is given by :
 
 $$
 D_M = \frac{S - 1}{\log(N)}
-$$ where :
+$$ 
+
+where :
 
 -   $S$: Number of unique species\
 -   $N$: Total number of individuals in the sample
@@ -143,7 +139,6 @@ Information theory in ecology.
 General Systems, 3, 36–71.
 
 ```{r}
-library(afribat)
 margalef(species)
 ```
 

@@ -112,14 +112,18 @@ species <- bats80 |>
   dplyr::pull("species") |> 
   as.character()
 
-# Check species
-if (length(species) == 0) {
-  stop("No species data found for the filtered dataset")
-}
-
-# Example usage of margalef index
-margalef(species)
-#> [1] 5.595365
+species
+#>  [1] "nudiventris"  "nudiventris"  "nudiventris"  "nudiventris"  "perforatus"  
+#>  [6] "perforatus"   "tridens"      "tridens"      "abae"         "cf. ruber"   
+#> [11] "cf. ruber"    "cf. ruber"    "jonesi"       "major"        "major"       
+#> [16] "major"        "major"        "major"        "pumilus"      "pumilus"     
+#> [21] "gambiensis"   "gambiensis"   "hispida"      "macrotis"     "thebaica"    
+#> [26] "helvum"       "helvum"       "gambianus"    "gambianus"    "angolensis"  
+#> [31] "fumigatus"    "landeri"      "cystops"      "microphyllum" "microphyllum"
+#> [36] "guineensis"   "schlieffeni"  "schlieffeni"  "schlieffeni"  "schlieffeni" 
+#> [41] "schlieffeni"  "rusticus"     "leucogaster"  "leucogaster"  "leucogaster" 
+#> [46] "leucogaster"  "leucogaster"  "leucogaster"  "leucogaster"  "leucogaster" 
+#> [51] "leucogaster"
 ```
 
 ## Biodiversity indices
@@ -137,7 +141,9 @@ of individuals ($N$). The formula is given by :
 
 $$
 D_M = \frac{S - 1}{\log(N)}
-$$ where :
+$$
+
+where :
 
 - $S$: Number of unique species  
 - $N$: Total number of individuals in the sample
@@ -150,7 +156,6 @@ For further reading see : Margalef, R. (1958). Information theory in
 ecology. General Systems, 3, 36–71.
 
 ``` r
-library(afribat)
 margalef(species)
 #> [1] 5.595365
 ```
